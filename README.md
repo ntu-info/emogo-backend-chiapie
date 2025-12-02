@@ -5,7 +5,7 @@ Making an EmoGo backend on a public server using FastAPI + MongoDB.
 
 ## Data Export Page URI
 
-🔗: https://emogo-backend.onrender.com/export
+🔗: https://emogo-backend-chiapie.onrender.com/export
 
 Stored data include:
 - Vlogs (videos)
@@ -39,7 +39,7 @@ Stored data include:
 
 ## Interactive API Documentation
 
-- **Swagger UI:** https://emogo-backend.onrender.com/docs
+- **Swagger UI:** https://emogo-backend-chiapie.onrender.com/docs
 
 ## Local Development
 
@@ -63,7 +63,3 @@ Stored data include:
    - API: http://localhost:8000
    - Export page: http://localhost:8000/export
    - API docs: http://localhost:8000/docs
-
-## Author
-
-Janet Chen
