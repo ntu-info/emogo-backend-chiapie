@@ -114,7 +114,9 @@ async def export_page():
                 cursor: pointer;
                 transition: all 0.3s ease;
                 text-decoration: none;
-                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 text-align: center;
                 box-shadow: 0 4px 15px rgba(0, 50, 98, 0.4);
             }}
@@ -180,8 +182,7 @@ async def export_page():
                     </a>
                 </div>
                 <div class="info-text">
-                    <strong>Note:</strong> All data will be exported in JSON format.
-                    Click any button above to download the respective dataset.
+                    <strong>Note:</strong> Data will be exported in JSON format. Click to download!
                 </div>
             </div>
         </div>
