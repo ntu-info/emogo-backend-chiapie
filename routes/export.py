@@ -43,7 +43,7 @@ async def export_page():
             }}
             body {{
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #003262 0%, #3B7EA1 100%);
                 min-height: 100vh;
                 padding: 40px 20px;
             }}
@@ -78,7 +78,7 @@ async def export_page():
             .stat-number {{
                 font-size: 3em;
                 font-weight: bold;
-                color: #667eea;
+                color: #FDB515;
                 margin-bottom: 10px;
             }}
             .stat-label {{
@@ -105,7 +105,7 @@ async def export_page():
                 margin-bottom: 30px;
             }}
             .download-btn {{
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #003262 0%, #3B7EA1 100%);
                 color: white;
                 padding: 15px 30px;
                 border: none;
@@ -117,21 +117,23 @@ async def export_page():
                 text-decoration: none;
                 display: inline-block;
                 text-align: center;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+                box-shadow: 0 4px 15px rgba(0, 50, 98, 0.4);
             }}
             .download-btn:hover {{
                 transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+                box-shadow: 0 6px 20px rgba(0, 50, 98, 0.6);
             }}
             .download-btn.all {{
-                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+                background: linear-gradient(135deg, #FDB515 0%, #FDB515 100%);
+                color: #003262;
+                box-shadow: 0 4px 15px rgba(253, 181, 21, 0.4);
                 grid-column: 1 / -1;
                 font-size: 1.2em;
                 padding: 20px 40px;
+                font-weight: 700;
             }}
             .download-btn.all:hover {{
-                box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+                box-shadow: 0 6px 20px rgba(253, 181, 21, 0.6);
             }}
             .info-text {{
                 color: #666;
@@ -139,7 +141,7 @@ async def export_page():
                 padding: 20px;
                 background: #f8f9fa;
                 border-radius: 10px;
-                border-left: 4px solid #667eea;
+                border-left: 4px solid #FDB515;
             }}
         </style>
     </head>
