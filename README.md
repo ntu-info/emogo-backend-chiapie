@@ -7,7 +7,7 @@ Making an EmoGo backend on a public server using FastAPI + MongoDB.
 
 🔗: https://emogo-backend-chiapie.onrender.com/export
 
-Stored data include:
+Stored data (JSON) include:
 - Vlogs (videos)
 - Sentiment Scores
 - GPS Coordinates
