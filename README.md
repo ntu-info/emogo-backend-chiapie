@@ -1,29 +1,69 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/e7FBMwSa)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21907706&assignment_repo_type=AssignmentRepo)
-# Deploy FastAPI on Render
+# EmoGo Backend
 
-Use this repo as a template to deploy a Python [FastAPI](https://fastapi.tiangolo.com) service on Render.
+## Sprint Goal
+Making an EmoGo backend on a public server using FastAPI + MongoDB.
 
-See https://render.com/docs/deploy-fastapi or follow the steps below:
+## Data Export Page URI
 
-## Manual Steps
+🔗: https://emogo-backend.onrender.com/export
 
-1. You may use this repository directly or [create your own repository from this template](https://github.com/render-examples/fastapi/generate) if you'd like to customize the code.
-2. Create a new Web Service on Render.
-3. Specify the URL to your new repository or this repository.
-4. Render will automatically detect that you are deploying a Python service and use `pip` to download the dependencies.
-5. Specify the following as the Start Command.
+Stored data include:
+- Vlogs (videos)
+- Sentiment Scores
+- GPS Coordinates
 
-    ```shell
-    uvicorn main:app --host 0.0.0.0 --port $PORT
-    ```
+## Tech Stack
 
-6. Click Create Web Service.
+- **Backend Framework:** FastAPI
+- **Database:** MongoDB Atlas
+- **Deployment:** Render
 
-Or simply click:
+## API Endpoints
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/fastapi)
+### Data Collection (for EmoGo Frontend)
+- `POST /api/vlogs` - Submit vlog data
+- `POST /api/sentiments` - Submit sentiment scores
+- `POST /api/gps` - Submit GPS coordinates
 
-## Thanks
+### Data Retrieval
+- `GET /api/vlogs` - Get all vlogs
+- `GET /api/sentiments` - Get all sentiment scores
+- `GET /api/gps` - Get all GPS coordinates
 
-Thanks to [Harish](https://harishgarg.com) for the [inspiration to create a FastAPI quickstart for Render](https://twitter.com/harishkgarg/status/1435084018677010434) and for some sample code!
+### Data Export (for TAs)
+- `GET /export` - Data export dashboard (HTML page)
+- `GET /export/vlogs` - Download vlogs as JSON
+- `GET /export/sentiments` - Download sentiments as JSON
+- `GET /export/gps` - Download GPS data as JSON
+- `GET /export/all` - Download all data as JSON
+
+## Interactive API Documentation
+
+- **Swagger UI:** https://emogo-backend.onrender.com/docs
+
+## Local Development
+
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Create `.env` file:**
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   DB_NAME=emogo_db
+   ```
+
+3. **Run the server:**
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+4. **Access locally:**
+   - API: http://localhost:8000
+   - Export page: http://localhost:8000/export
+   - API docs: http://localhost:8000/docs
+
+## Author
+
+Janet Chen
