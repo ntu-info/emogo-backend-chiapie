@@ -84,8 +84,7 @@ async def export_page():
             .stat-label {{
                 color: #666;
                 font-size: 1.1em;
-                text-transform: uppercase;
-                letter-spacing: 1px;
+                letter-spacing: 0.5px;
             }}
             .export-section {{
                 background: white;
@@ -147,7 +146,7 @@ async def export_page():
     </head>
     <body>
         <div class="container">
-            <h1>EmoGo Data Export Dashboard</h1>
+            <h1>EmoGo data export dashboard</h1>
 
             <div class="stats-container">
                 <div class="stat-card">
@@ -160,24 +159,24 @@ async def export_page():
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">{gps_count}</div>
-                    <div class="stat-label">GPS Coordinates</div>
+                    <div class="stat-label">GPS coordinates</div>
                 </div>
             </div>
 
             <div class="export-section">
-                <h2>Export Data</h2>
+                <h2>Export data</h2>
                 <div class="button-grid">
                     <a href="/export/vlogs" class="download-btn" download="vlogs.json">
-                        Download Vlogs
+                        Download vlogs
                     </a>
                     <a href="/export/sentiments" class="download-btn" download="sentiments.json">
-                        Download Sentiments
+                        Download sentiments
                     </a>
                     <a href="/export/gps" class="download-btn" download="gps_coordinates.json">
-                        Download GPS Data
+                        Download GPS data
                     </a>
                     <a href="/export/all" class="download-btn all" download="emogo_all_data.json">
-                        Download All Data
+                        Download all data
                     </a>
                 </div>
                 <div class="info-text">
