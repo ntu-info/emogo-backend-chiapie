@@ -1,8 +1,8 @@
 # EmoGo Backend
 
-**Data Export Page:** https://emogo-backend-chiapie.onrender.com/export
-**API Documentation:** https://emogo-backend-chiapie.onrender.com/docs
-**Sample Video URI:** https://emogo-backend-chiapie.onrender.com/videos/christmas.mp4
+- **Data Export Page:** https://emogo-backend-chiapie.onrender.com/export
+- **API Documentation:** https://emogo-backend-chiapie.onrender.com/docs
+- **Sample Video URI:** https://emogo-backend-chiapie.onrender.com/videos/christmas.mp4
 
 ## Sprint Goal
 Making an EmoGo backend on a public server using FastAPI + MongoDB.
