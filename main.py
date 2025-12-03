@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 from database import connect_to_mongo, close_mongo_connection
 from routes import vlogs, sentiments, gps, export
+import os
 
 
 @asynccontextmanager
@@ -32,6 +34,11 @@ app.include_router(sentiments.router)
 app.include_router(gps.router)
 app.include_router(export.router)
 
+# Mount videos directory for static file serving
+videos_dir = os.path.join(os.path.dirname(__file__), "videos")
+if os.path.exists(videos_dir):
+    app.mount("/videos", StaticFiles(directory=videos_dir), name="videos")
+
 
 @app.get("/")
 async def root():
@@ -39,7 +46,8 @@ async def root():
         "message": "Welcome to EmoGo Backend API",
         "version": "1.0.0",
         "documentation": "/docs",
-        "export_page": "/export"
+        "export_page": "/export",
+        "sample_video": "/videos/christmas.mp4"
     }
 
 

@@ -3,6 +3,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from database import get_database
 from typing import List, Dict, Any
 import json
+import os
+import glob
 
 router = APIRouter()
 
@@ -27,6 +29,12 @@ async def export_page():
     vlogs_count = await db.vlogs.count_documents({})
     sentiments_count = await db.sentiments.count_documents({})
     gps_count = await db.gps_coordinates.count_documents({})
+
+    # Get video files from videos directory
+    videos_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "videos")
+    video_files = []
+    if os.path.exists(videos_dir):
+        video_files = [os.path.basename(f) for f in glob.glob(os.path.join(videos_dir, "*"))]
 
     html_content = f"""
     <!DOCTYPE html>
@@ -183,6 +191,14 @@ async def export_page():
                 </div>
                 <div class="info-text">
                     <strong>Note:</strong> Data will be exported in JSON format. Click to download!
+                </div>
+            </div>
+
+            <div class="export-section" style="margin-top: 20px;">
+                <h2>Video files</h2>
+                {"".join([f'<div class="button-grid"><a href="/videos/{video}" class="download-btn" download="{video}">Download {video}</a></div>' for video in video_files]) if video_files else '<p style="color: #666;">No video files available</p>'}
+                <div class="info-text">
+                    <strong>Backend URIs:</strong> Videos are served from backend and can be downloaded directly via URLs like <code>/videos/filename.mp4</code>
                 </div>
             </div>
         </div>

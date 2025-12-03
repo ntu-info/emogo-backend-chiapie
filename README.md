@@ -1,26 +1,25 @@
 # EmoGo Backend
 
+**Data Export Page:** https://emogo-backend-chiapie.onrender.com/export
+**API Documentation:** https://emogo-backend-chiapie.onrender.com/docs
+**Sample Video URI:** https://emogo-backend-chiapie.onrender.com/videos/christmas.mp4
+
 ## Sprint Goal
 Making an EmoGo backend on a public server using FastAPI + MongoDB.
 
-## Data Export Page URI
-
-🔗: https://emogo-backend-chiapie.onrender.com/export
-
-Stored data (JSON) include:
+## Stored Data
 - Vlogs (videos)
 - Sentiment Scores
 - GPS Coordinates
 
 ## Tech Stack
-
 - **Backend Framework:** FastAPI
 - **Database:** MongoDB Atlas
 - **Deployment:** Render
 
 ## API Endpoints
 
-### Data Collection (for EmoGo Frontend)
+### Data Collection
 - `POST /api/vlogs` - Submit vlog data
 - `POST /api/sentiments` - Submit sentiment scores
 - `POST /api/gps` - Submit GPS coordinates
@@ -30,16 +29,12 @@ Stored data (JSON) include:
 - `GET /api/sentiments` - Get all sentiment scores
 - `GET /api/gps` - Get all GPS coordinates
 
-### Data Export (for TAs)
+### Data Export
 - `GET /export` - Data export dashboard (HTML page)
 - `GET /export/vlogs` - Download vlogs as JSON
 - `GET /export/sentiments` - Download sentiments as JSON
 - `GET /export/gps` - Download GPS data as JSON
 - `GET /export/all` - Download all data as JSON
-
-## Interactive API Documentation
-
-- **Swagger UI:** https://emogo-backend-chiapie.onrender.com/docs
 
 ## Local Development
 
